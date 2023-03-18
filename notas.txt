@@ -1,0 +1,25 @@
+const url = "mongodb+srv://pablin:1234@primero.adorfna.mongodb.net/Mascotas?retryWrites=true&w=majority";
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(()=> console.log('conectado a mongodb')) 
+  .catch(e => console.log('error de conexión', e))
+
+
+
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const mascotaSchema = new Schema({
+  nombre:  String
+});
+const saludoSchema = new Schema({
+    saludo:  String,
+    nose:{
+        type:String,
+        required: true
+    }
+});
+
+// Crear el modelo
+const Mascota = mongoose.model('mascota', mascotaSchema);
+const Saludar = mongoose.model("perros", saludoSchema);
+module.exports = {Mascota, Saludar};
