@@ -3,10 +3,10 @@ const { conectar } = require("./baseDatos/conexion.js");
 const { boomHandleError } = require("./middlewares/boomHandle.js");
 const { crearApi } = require("./routers/index.js");
 const cors = require("cors");
-const { unauthorized } = require("@hapi/boom");
+
 const app = express();
 
-const PUERTO = process.env.PORT || 4000;
+const PUERTO = process.env.PORT;
 app.use(cors());
 app.use(express.json());
 conectar();
