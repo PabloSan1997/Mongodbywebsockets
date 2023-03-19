@@ -1,6 +1,6 @@
 
 const mongoose = require("mongoose");
-const { userDb, passwordDB, nameDB } = require("./variables");
+
 
 const URL = `mongodb+srv://pablo:1234@cluster0.c9zjxa0.mongodb.net/elementos?retryWrites=true&w=majority`;
 
